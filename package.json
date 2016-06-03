@@ -1,11 +1,18 @@
 {
   "name": "gitbook-plugin-toc2",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "dependencies": {
     "marked-toc": "^0.3.0"
   },
+  "engines": {
+    "gitbook": "*"
+  },
+  "keywords": [
+    "gitbook",
+    "plugin"
+  ],
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
