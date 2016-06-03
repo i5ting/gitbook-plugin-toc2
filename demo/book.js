@@ -9,7 +9,7 @@ module.exports = {
     gitbook: '>=3.0.0-pre.0',
 
     // Use the "official" theme
-    plugins: ["toc", "toc2"],
+    plugins: ["toc2"],
 
     variables: {
         version: pkg.version

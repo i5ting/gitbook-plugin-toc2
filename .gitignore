@@ -1,4 +1,5 @@
 # Logs
+demo/_book/
 logs
 *.log
 npm-debug.log*
