@@ -260,6 +260,19 @@ package.json必须写
 
 只能把SUMMARY里的内容减少到你当前需要的，切勿把所有的都放里，避免死翘翘
 
+### npm scripts
+
+```
+  "scripts": {
+    "start": "watch -i 300ms gitbook serve",
+    "open": "npm run build && open _book/index.html",
+    "build": "gitbook build . --gitbook=2.0.1",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+```
+
+经常是一遍修改，然后服务器自动reload，这样有的时候会导致gitbook死掉，最好的办法是使用tj的watch监察一下。
+
 ## 总结
 
 gitbook的插件设计还是非常不错的。从markdown需要编译处下手，完成插件切入，集成。另外插件的配置方式、hook等都可圈可点。
