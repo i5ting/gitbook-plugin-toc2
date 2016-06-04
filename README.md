@@ -36,7 +36,7 @@ $ gitbook install
 
 ### 文档
 
-官方的文档极其的烂。。。。，这里还是推荐直接看源码里的文档
+[官方的文档](http://developer.gitbook.com/plugins/index.html)极其的烂。。。。，这里还是推荐直接看源码里的文档
 
 https://github.com/GitbookIO/gitbook/tree/master/docs
 
