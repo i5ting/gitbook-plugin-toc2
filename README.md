@@ -160,6 +160,66 @@ module.exports = {
 
 按需就好，一般的css、js和回调hook等比较常用
 
+### 入口指定的js
+
+为了防止大量插件影响速度，所以才有requirejs这种amd的模块化加载机制
+
+```
+require(["gitbook", "jQuery"], function(gitbook, $) {
+
+  // Return true if sidebar is open
+  function isOpen() {
+      return gitbook.state.$book.hasClass('with-summary');
+  }
+  
+  var i = 1;
+  $( window ).keydown(function( event ) {
+    console.log(event.which)
+    // enter = 13
+    // t = 84
+    if ( event.which === 13 || event.which === 84) {
+      if (i % 2 == 1) {
+        $('.markdown-section > ul').first().show().addClass('toc2')
+      } else {
+        $('.markdown-section > ul').first().hide()
+      }
+      
+      i++;
+    }
+    
+    // h = hide
+    if(event.which === 72){
+      $('.markdown-section > ul').first().hide()
+    }
+  });
+  
+  
+  gitbook.events.bind("page.change", function() {
+  
+  });
+  
+});
+
+```
+
+内置jquery，所以整体来说和普通的jquery插件没啥区别，难度比较小
+
+### 结合node模块写扩展
+
+比如本例子中
+
+```
+var toc = require('marked-toc');
+```
+
+所以它的package.json里就需要安装对应的依赖
+
+```
+  "dependencies": {
+    "marked-toc": "^0.3.0"
+  },
+```
+
 ### 事件
 
 - page:before
@@ -190,7 +250,7 @@ package.json必须写
   },
 ```
 
-不然安装的时候找不到
+不然安装的时候找不到。即gitbook install的时候做的手脚
 
 ### 慢的问题
 
@@ -203,3 +263,5 @@ package.json必须写
 gitbook的插件设计还是非常不错的。从markdown需要编译处下手，完成插件切入，集成。另外插件的配置方式、hook等都可圈可点。
 
 通过gitbook install来安装gitbook-plugin-xx，也是个不错的实践。
+
+对于设计express或koa插件机制来说，是个比较好的参考。
