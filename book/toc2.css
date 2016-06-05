@@ -1,6 +1,7 @@
 .toc2 {
-  /* display: none; */
-  bottom: 0px;
+  background: white;
+  max-width: 240px;
   position: fixed;
-  right: 0px;  
+  right: 0px;
+  bottom: 0px;
 }
