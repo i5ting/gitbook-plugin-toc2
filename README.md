@@ -2,7 +2,7 @@
 
 在gitbook里，回车，显示或隐藏toc
 
-![](preview.png)
+![](toc2.gif)
 
 ## 用法
 
