@@ -32,6 +32,27 @@ $ gitbook install
 
 打开页面，默认会显示toc，回车，显示toc，再回车，隐藏toc。当然你也可以直接h隐藏
 
+### 已知问题
+
+```
+- Callbacks：错误优先（error-first）的回调风格
+- EventEmitter：事件驱动
+
+<!-- toc -->
+```
+
+这样会显示上面的ul作为toc，是不正确的，所以保证toc上面无ul
+
+
+下面这种是ok的
+
+```
+<!-- toc -->
+
+- Callbacks：错误优先（error-first）的回调风格
+- EventEmitter：事件驱动
+```
+
 ## 关于gitbook插件
 
 ### 文档
